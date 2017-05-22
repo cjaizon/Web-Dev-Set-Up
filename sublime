@@ -88,6 +88,7 @@ A File Icon, AdvancedNewFile, Agila Theme, AlignTab, auto-save, Autoprefixer, Br
 ]
 
 ==================== JS console ======================
+create a new build system and paste it inside.
 
 {
   "cmd": ["/usr/local/bin/node", "$file"],
@@ -99,3 +100,6 @@ Windows users…
   "cmd": ["C:/Program Files/nodejs/node.exe", "$file"],
   "selector": "source.js"
 }
+
+
+Save it as JavaScript.sublime-build
