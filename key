@@ -1,6 +1,0 @@
-[
-	{"keys": ["ctrl+alt+m"], "command": "toggle_menu"},
-
-	{"keys": ["ctrl+1"], "command": "toggle_comment", "args": { "block": true }},
-	{ "keys": ["ctrl+shift+s"], "command": "auto_save", "args": {"all_files": false} }
-]
