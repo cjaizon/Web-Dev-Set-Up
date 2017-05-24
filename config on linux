@@ -37,3 +37,108 @@ EDITOR=/usr/bin/nano
 sudo mount -o remount,size=10G,noatime /tmp
 echo "Done. Please use 'df -h' to make sure folder size is increased."
 
+
+================================  How to skip grub menu on boot, you can hold shit for it to appear ===================
+
+# 3. Disable GRUB delay
+
+Add the following to /etc/default/grub:
+# achieve the fastest possible boot:
+GRUB_FORCE_HIDDEN_MENU="true"
+
+Then put file 31_hold_shift to /etc/grub.d/.
+Download 31_hold_shift https://goo.gl/nac6Kp
+
+Make it executable, and regenerate the grub configuration:
+sudo chmod a+x /etc/grub.d/31_hold_shift
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+<!-----  in ase that link doesn't work -->
+
+#! /bin/sh
+set -e
+
+prefix="/usr"
+exec_prefix="${prefix}"
+datarootdir="${prefix}/share"
+
+export TEXTDOMAIN=grub
+export TEXTDOMAINDIR="${datarootdir}/locale"
+source "${datarootdir}/grub/grub-mkconfig_lib"
+
+found_other_os=
+
+make_timeout () {
+
+  if [ "x${GRUB_FORCE_HIDDEN_MENU}" = "xtrue" ] ; then 
+    if [ "x${1}" != "x" ] ; then
+      if [ "x${GRUB_HIDDEN_TIMEOUT_QUIET}" = "xtrue" ] ; then
+    verbose=
+      else
+    verbose=" --verbose"
+      fi
+
+      if [ "x${1}" = "x0" ] ; then
+    cat <<EOF
+if [ "x\${timeout}" != "x-1" ]; then
+  if keystatus; then
+    if keystatus --shift; then
+      set timeout=-1
+    else
+      set timeout=0
+    fi
+  else
+    if sleep$verbose --interruptible 3 ; then
+      set timeout=0
+    fi
+  fi
+fi
+EOF
+      else
+    cat << EOF
+if [ "x\${timeout}" != "x-1" ]; then
+  if sleep$verbose --interruptible ${GRUB_HIDDEN_TIMEOUT} ; then
+    set timeout=0
+  fi
+fi
+EOF
+      fi
+    fi
+  fi
+}
+
+adjust_timeout () {
+  if [ "x$GRUB_BUTTON_CMOS_ADDRESS" != "x" ]; then
+    cat <<EOF
+if cmostest $GRUB_BUTTON_CMOS_ADDRESS ; then
+EOF
+    make_timeout "${GRUB_HIDDEN_TIMEOUT_BUTTON}" "${GRUB_TIMEOUT_BUTTON}"
+    echo else
+    make_timeout "${GRUB_HIDDEN_TIMEOUT}" "${GRUB_TIMEOUT}"
+    echo fi
+  else
+    make_timeout "${GRUB_HIDDEN_TIMEOUT}" "${GRUB_TIMEOUT}"
+  fi
+}
+
+  adjust_timeout
+
+    cat <<EOF
+if [ "x\${timeout}" != "x-1" ]; then
+  if keystatus; then
+    if keystatus --shift; then
+      set timeout=-1
+    else
+      set timeout=0
+    fi
+  else
+    if sleep$verbose --interruptible 3 ; then
+      set timeout=0
+    fi
+  fi
+fi
+EOF
+
+
+===============================================   ==============================================
+
