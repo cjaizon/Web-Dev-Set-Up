@@ -43,17 +43,21 @@ echo "Done. Please use 'df -h' to make sure folder size is increased."
 Disable GRUB delay
 
 Add the following to /etc/default/grub:
+
 # achieve the fastest possible boot:
 GRUB_FORCE_HIDDEN_MENU="true"
 
-Then put file 31_hold_shift to /etc/grub.d/.
-Download 31_hold_shift https://goo.gl/nac6Kp
+sudo nano /etc/grub.d/holdshift
+
+copy the content from this link https://gist.githubusercontent.com/anonymous/8eb2019db2e278ba99be/raw/257f15100fd46aeeb8e33a7629b209d0a14b9975/gistfile1.sh
+and paste it there. Save it.
 
 Make it executable, and regenerate the grub configuration:
-sudo chmod a+x /etc/grub.d/31_hold_shift
+
+sudo chmod a+x /etc/grub.d/holdshift
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-<!-----  in ase that link doesn't work -->
+<!-----  in case that link doesn't work -->
 
 #! /bin/sh
 set -e
@@ -138,7 +142,6 @@ if [ "x\${timeout}" != "x-1" ]; then
   fi
 fi
 EOF
-
 
 =============================================== Some packages  ==============================================
 
