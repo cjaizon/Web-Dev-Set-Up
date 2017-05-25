@@ -40,6 +40,8 @@ echo "Done. Please use 'df -h' to make sure folder size is increased."
 
 ================================  How to skip grub menu on boot, you can hold shit for it to appear ===================
 
+(https://www.youtube.com/watch?v=Wm5kurfejzw)
+
 Disable GRUB delay
 
 Add the following to /etc/default/grub:
