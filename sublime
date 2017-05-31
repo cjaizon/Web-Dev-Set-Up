@@ -106,6 +106,7 @@ Save it as JavaScript.sublime-build
 on linux youmay fin that node is on this path   
 
 {
-  "cmd": ["/usr/local/bin/node", "$file"],
+  "cmd": ["/usr/bin/node", "$file"],
   "selector": "source.js"
 }
+or "nodejs" for ubuntu
