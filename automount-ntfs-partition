@@ -1,0 +1,11 @@
+The first thing to do is find the UIID of the parttion you want to automount on startup, forthat execute "sudo blkid". 
+
+Find the partition  you want as mentioned before and copy it UIID like so "UUID="01D2C865CE7EBC30""
+
+Open "sudo nano /etc/fstab" to edit the new entry and place this code there "UUID="01D2C865CE7EBC30" /media/files ntfs rw,auto,users,exec,nls=utf8,umask=000,gid=46,uid=1000    0   0"
+
+Here the "UUID="01D2C865CE7EBC30"" code is the one we take before and in the "/media/files" you can name "files" whatever you want.
+
+Now just give a "sudo mount -a" and done.
+
+Everytime you start your system now the partition you choosed shoul be mounted under "/media/name you gave to your mount point" and with read/write permissions.
