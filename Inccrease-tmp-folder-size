@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo mount -o remount,size=10G,noatime /tmp
+echo "Done. Please use 'df -h' to make sure folder size is increased."
+
+#All content here is a bash file, you can just copy it and paste in a textfile and name it whatever you want as long as you
+#end it with a ".sh" at the end, to run it youneed to make it an executable using this comand "chmod +x file.sh", "file" is the
+#nameyou gave to the fie you've create.
