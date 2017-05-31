@@ -1,15 +1,5 @@
-gnome-terminal-transparency
 
-install screenfetch, scout app, SmartGit, Gyazo, inkscape, krita,Gimp, Google chrome, qbittorrent, vivaldi,
-Games, Assault Cube, On Raid, Snes9x, Urban Terror
-multimidia  Kdenlive, Audacity, audacious, vlc, OBS, shotcut, stremio, vokoscreen, anbox
-
-style libre office
-
-
-putthese lines inthe file ".bashrc" in the user folder (Jaizon/.bashrc)
-
-=======================================================================
+/////////////  Bash  \\\\\\\\\\\\\\
 
 #
 # ~/.bashrc
@@ -38,7 +28,7 @@ sudo mount -o remount,size=10G,noatime /tmp
 echo "Done. Please use 'df -h' to make sure folder size is increased."
 
 
-================================  How to skip grub menu on boot, you can hold shit for it to appear ===================
+/////////////  skip grub menu on boot  \\\\\\\\\\\\\\  --Arch--
 
 Video tutorial (https://www.youtube.com/watch?v=Wm5kurfejzw)
 Arch wiki (https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks#Hide_GRUB_unless_the_Shift_key_is_held_down)
@@ -146,9 +136,7 @@ if [ "x\${timeout}" != "x-1" ]; then
 fi
 EOF
 
-=============================================== Some packages  ==============================================
-
-Install some key packages
+/////////////  Some packages  \\\\\\\\\\\\\\  --Arch-- 
 
 sudo pacman -S adobe-source-sans-pro-fonts aspell-en enchant gst-libav gst-plugins-good hunspell-en icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
 
