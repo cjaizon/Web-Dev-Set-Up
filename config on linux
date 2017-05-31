@@ -19,14 +19,6 @@ BROWSER=/usr/bin/chromium
 EDITOR=/usr/bin/nano
 # <<< END ADDED BY CNCHI INSTALLER
 
-================================  This line is to encrease the tmp folder size  =======================================
-(this is hou you ceate a bash file, the first line is to set up a bash and all the other lines are separeted command lines, also use "chmod +x file_name.sh" to make the file a executable)
-
-#!/bin/bash
-
-sudo mount -o remount,size=10G,noatime /tmp
-echo "Done. Please use 'df -h' to make sure folder size is increased."
-
 
 /////////////  skip grub menu on boot  \\\\\\\\\\\\\\  --Arch--
 
