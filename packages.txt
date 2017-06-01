@@ -24,7 +24,7 @@ sublime text 3 dev
 
 Libre Office
 Master PDf editor
-QOwn Notes
+cherrytree
 Scribus
 WPS Office
 
@@ -39,7 +39,6 @@ krita
 
 Gitter
 Google chrome
-nixnote2
 qbittorrent
 vivaldi
 xtreme download manger
