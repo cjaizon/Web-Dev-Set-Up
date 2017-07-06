@@ -6,36 +6,6 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 ================= Packages ===================
 
-"A File Icon",
-"AdvancedNewFile",
-"Agila Theme",
-"AlignTab",
-"auto-save",
-"Autoprefixer",
-"BracketHighlighter",
-"Can I Use",
-"Color Highlighter",
-"ColorPicker",
-"Default File Type",
-"DocBlockr",
-"Emmet",
-"Git",
-"GitGutter",
-"Gutter Color",
-"HTML-CSS-JS Prettify",
-"JavaScript Snippets",
-"jQuery Snippets pack",
-"LiveReload",
-"Origami",
-"SideBarEnhancements",
-"SideBarTools",
-"SublimeCodeIntel",
-"TabsExtra",
-"Terminal",
-"Theme - Lanzhou",
-"Theme - Soda",
-"Web Inspector"
-
 <!--  here you can install all those packages at once in advanced install mode, just copy it anpaste where you are asked to --.
 
 
@@ -74,8 +44,9 @@ A File Icon, AdvancedNewFile, Agila Theme, AlignTab, auto-save, Autoprefixer, Ba
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true,
-    "remember_open_files": false,
-    "hot_exit": false
+    "save_on_focus_lost": true,
+    "hot_exit": true,
+	"use_simple_full_screen": true
 }
 
 =====================  Keys   ========================
