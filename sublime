@@ -9,7 +9,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 <!--  here you can install all those packages at once in advanced install mode, just copy it anpaste where you are asked to --.
 
 
-A File Icon, AdvancedNewFile, Agila Theme, AlignTab, auto-save, AutomaticFullscreen, Autoprefixer, Babel, Better CoffeeScript, BracketHighlighter, Can I Use, Color Highlighter, ColorPicker, Default File Type, DocBlockr, Emmet, Git, GitGutter, Gutter Color, HTML-CSS-JS Prettify, JavaScript Completions, JavaScript Next Snippets, jQuery, jQuery Snippets pack, LiveReload, Origami, SCSS, SideBarEnhancements, SideBarTools, SublimeCodeIntel, SublimeLinter, SyncedSideBar, TabsExtra, Terminal, Theme - Lanzhou, Theme - Soda, Web Inspector
+A File Icon, AdvancedNewFile, Agila Theme, AlignTab, auto-save, AutomaticFullscreen, Autoprefixer, Babel, Better CoffeeScript, BracketHighlighter, Can I Use, Color Highlighter, ColorPicker, Default File Type, DocBlockr, Emmet, Git, GitGutter, Gutter Color, HTML-CSS-JS Prettify, JavaScript Completions, JavaScript Next Snippets, jQuery, jQuery Snippets pack, LiveReload, Origami, SCSS, SideBarEnhancements, SideBarTools, SublimeCodeIntel, SublimeLinter, SyncedSideBar, TabsExtra, Terminal, Web Inspector
 
 
 ========================= Config ========================
@@ -17,9 +17,8 @@ A File Icon, AdvancedNewFile, Agila Theme, AlignTab, auto-save, AutomaticFullscr
 {
 	"atomic_save": true,
 	"color_scheme": "Packages/Agila Theme/Agila Neon Monocyanide.tmTheme",
-	"draw_white_space": "none",
-	"font-face": "Fira Code",
 	"font_size": 11,
+	"hot_exit": true,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -34,19 +33,15 @@ A File Icon, AdvancedNewFile, Agila Theme, AlignTab, auto-save, AutomaticFullscr
 	[
 		80
 	],
-	"show_full_path": false,
-	"soda_classic_tabs": true,
-	"soda_folder_icons": true,
+	"save_on_focus_lost": true,
 	"tab_size": 4,
-	"theme": "Lanzhou.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true,
-    "save_on_focus_lost": true,
-    "hot_exit": true,
-	"use_simple_full_screen": true
+	"use_simple_full_screen": true,
+	"word_wrap": true
 }
+
 
 =====================  Keys   ========================
 [
