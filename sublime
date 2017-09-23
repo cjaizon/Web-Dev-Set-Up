@@ -60,9 +60,9 @@ create a new build system and paste it inside.
 Windows users…
 
 {
-  "cmd": ["node", "$file", "$file_base_name"],
-  "working_dir": "${project_path:${folder}}",
-  "selector": "*.js"
+    "cmd": ["node", "$file"],
+    "selector": "source.js",
+    "path": "$PATH:/usr/local/bin/"
 }
 
 
