@@ -9,7 +9,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 <!--  here you can install all those packages at once in advanced install mode, just copy it anpaste where you are asked to --.
 
 
-A File Icon, AdvancedNewFile, Agila Theme, AlignTab, auto-save, Autoprefixer, Babel, Better CoffeeScript, BracketHighlighter, Can I Use, Color Highlighter, ColorPicker, Default File Type, DocBlockr, Emmet, Git, GitGutter, Gutter Color, HTML-CSS-JS Prettify, JavaScript Completions, JavaScript Next Snippets, jQuery, jQuery Snippets pack, LiveReload, Origami, SCSS, SideBarEnhancements, SideBarTools, SublimeCodeIntel, SublimeLinter, SyncedSideBar, TabsExtra, Terminal, Web Inspector
+A File Icon, AdvancedNewFile, Agila Theme, AlignTab, auto-save, Autoprefixer, Babel, Better CoffeeScript, BracketHighlighter, Can I Use, Color Highlighter, ColorPicker, Default File Type, DocBlockr, EJS 2, Emmet, Git, GitGutter, Gutter Color, HTML-CSS-JS Prettify, JavaScript Completions, JavaScript Next Snippets, jQuery, jQuery Snippets pack, LiveReload, Origami, SCSS, SideBarEnhancements, SideBarTools, SublimeCodeIntel, SublimeLinter, SyncedSideBar, TabsExtra, Terminal, Web Inspector
 
 
 ========================= Config ========================
