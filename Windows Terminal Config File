@@ -38,7 +38,8 @@
             "useAcrylic": true,
             "fontSize": 10,
             "cursorShape": "underscore",
-            "showTabsInTitlebar": false
+            "showTabsInTitlebar": false,
+            "startingDirectory":"C:\\code\\"
         },
                 "list":
         [
