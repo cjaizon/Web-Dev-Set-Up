@@ -49,7 +49,6 @@ Set Cascadia Code PL as your font: in this case we already have it on or config 
     "$schema": "https://aka.ms/terminal-profiles-schema",
 
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-    "fontFace": "Cascadia Code PL",
 
     // If enabled, selections are automatically copied to your clipboard.
     "copyOnSelect": false,
@@ -69,8 +68,8 @@ Set Cascadia Code PL as your font: in this case we already have it on or config 
             // "colorScheme": "Frost",
             "acrylicOpacity": 0.7,
             "background": "#130730",
-            "fontFace": "Cascadia Code",
             "useAcrylic": true,
+            "fontFace": "Cascadia Code PL",
             "fontSize": 10,
             "cursorShape": "underscore",
             "showTabsInTitlebar": false,
