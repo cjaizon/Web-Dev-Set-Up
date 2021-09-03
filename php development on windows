@@ -1,0 +1,105 @@
+link : https://www.sitepoint.com/how-to-install-apache-on-windows/
+
+Starting web development is easy: you create a file called something.html, edit it in Notepad, and load it in a browser. Simple sites can be built using this process, but to really explore the possibilities, you need a web server.
+
+This popular article was updated in 2020 to provide the most helpful and accurate guidance.
+
+What is a Web Server?
+(Skip to the next section if you prefer …)
+
+A web server is software that listens for requests and returns data (usually a file). When you type “www.mysite.com”, the request is forwarded to a machine running web server software which returns a file back to your browser — such as the contents of index.html. The browser might then make further requests based on the HTML content — like CSS, JavaScript, and graphic files.
+
+Since the web server sits between your browser and the requested file, it can perform processing that’s not possible by opening an HTML file directly. For example, it can parse PHP code which connects to a database and returns data.
+
+You can use your host’s web server for testing, but uploading will become tiresome and changes could go live before they’ve been fully tested. What you need is a local web server installation.
+
+Why Apache?
+In general, it’s good to use the web server software that your web host uses. Unless you’re creating ASP.NET applications on Microsoft IIS, your host is likely to use Apache — the most widespread and fully-featured web server available. It’s an open-source project, so it doesn’t cost anything to download or install.
+
+The following instructions describe how to install Apache on Windows. macOS comes with Apache and PHP. Most Linux users will have Apache pre-installed or available in the base repositories.
+
+All-in-one Packages
+There are some excellent all-in-one Windows distributions that contain Apache, PHP, MySQL and other applications in a single installation file — such as XAMPP (for Windows, Linux and macOS), WampServer and WampDeveloper Pro. There’s nothing wrong with using these packages, although manually installing Apache will help you learn more about the system and its configuration options.
+
+The Apache Installation Wizard
+An excellent official .msi installation wizard is available from the Apache download page. This option is certainly recommended for novice users or perhaps those installing Apache for the first time.
+
+Manual Installation
+Manual installation offers several benefits:
+
+Backing up, reinstalling, or moving the web server can be achieved in seconds.
+You have more control over how and when Apache starts.
+You can install Apache anywhere, such as a portable USB drive (useful for client demonstrations).
+Step 1: Configure IIS
+Apache listens for requests on TCP/IP port 80. You need to uninstall or disable any program that uses that port. If you have a Professional or Server version of Windows, you may already have IIS installed. If you would prefer Apache, either remove IIS as a Windows component or disable its services.
+
+Step 2: Download the files
+We’re going to use the unofficial Windows binary from Apache Lounge. This version has performance and stability improvements over the official Apache distribution, although I’m yet to notice a significant difference. However, it’s provided as a manually installable ZIP file from www.apachelounge.com/download/.
+
+You should also download and install the Windows C++ runtime from Microsoft.com. You may have this installed already, but there is no harm installing it again.
+
+As always, remember to virus scan all downloads.
+
+Step 3: Extract the Files
+We’ll install Apache in C:/Apache24, so extract the ZIP file to the root of the C:/ drive. Apache can be installed anywhere on your system, but you’ll need to change SVROOT configuration to point to your unzipped location — suh as E:/Apache24.
+
+Step 4: Configure Apache
+Apache is configured with the text file conf/httpd.conf contained in the Apache folder. Open it with your favorite text editor.
+
+Note that all file path settings use a forward slash (/) rather than the Windows backslash. If you installed Apache anywhere other than C:/Apache24, now is a good time to search and replace all references to C:/Apache24.
+
+There are several lines you should change for your production environment:
+
+Line 60, listen to all requests on port 80:
+
+Listen *:80
+Line 162, enable mod-rewrite by removing the # (optional, but useful):
+
+LoadModule rewrite_module modules/mod_rewrite.so
+Line 227, specify the server domain name:
+
+ServerName localhost:80
+Line 224, allow .htaccess overrides:
+
+AllowOverride All
+Step 4: Change the Web Page Root (optional)
+By default, Apache returns files found in its C:/Apache24/htdocs folder. It’s good to use a folder on an another drive or partition to make backups and re-installation easier. For the purposes of this example, we’ll create a folder called D:WebPages and change httpd.conf accordingly:
+
+Line 251, set the root:
+
+DocumentRoot "D:/WebPages"
+Line 252:
+
+<Directory "D:/WebPages">
+Step 5: Test your Installation
+Your Apache configuration can now be tested. Open a command box (Start > Run > cmd) and enter:
+
+# navigate to Apache bin directory
+cd /Apache24/bin
+# Test httpd.conf validity
+httpd -t
+It should say “Syntax OK”. If not, correct any httpd.conf configuration errors and retest until none appear.
+
+Step 6: install Apache as a Windows service
+The easiest way to start Apache is to add it as a Windows service. Open a new command prompt as administrator, and enter the following:
+
+cd /Apache24/bin
+httpd -k install
+Open the Control Panel, Administrative Tools, then Services and double-click Apache2.4. Set the Startup type to “Automatic” to ensure Apache starts every time you boot your PC.
+
+Alternatively, set the Startup type to “Manual” and launch Apache whenever you choose using the command “net start Apache2.4”.
+
+Step 7: Test the Web server
+Create a file named index.html in Apache’s web page root (either htdocs or D:\WebPages) and add a little HTML code:
+
+<html>
+    <head>
+        <title>Testing Apache</title>
+    </head>
+    <body>
+        <p>Apache is working!</p>
+    </body>
+</html>
+Ensure Apache has started successfully, open a web browser and enter the address http://localhost/. If all goes well, your test page should appear.
+
+In general, most problems will be caused by an incorrect setting in the httpd.conf configuration file. Refer to the Apache documentation if you require further information.
