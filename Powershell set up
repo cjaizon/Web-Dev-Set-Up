@@ -1,0 +1,30 @@
+Install-Module oh-my-posh
+Install-Module posh-git
+Set-ExecutionPolicy Unrestricted
+Import-Module oh-my-posh
+Import-Module posh-git
+
+echo $profile
+You'll get a file path in return, that's the file, which is executed every time we start Windows Terminal
+We just need to simply add those import commands to this file.
+To do that,
+code $profile
+This will ask you to create this file if it doesn't exist.
+
+Paste the following commands and save the file.
+
+### Configurações do PowerShell
+### Importar os temas do oh-my-posh e utilizar o Star
+Import-Module posh-git
+Import-Module oh-my-posh
+### Themes
+Set-PoshPrompt craver
+# Set-PoshPrompt star
+### Autocomplete, keybinds e histórico de comandos
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadlineOption -HistorySearchCursorMovesToEnd
+### Autosugestões do PSReadline
+Set-PSReadlineOption -ShowToolTips
+Set-PSReadlineOption -PredictionSource History
