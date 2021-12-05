@@ -1,53 +1,164 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
-            "command": {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
         },
         {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "alt+h"
+        },
+        {
+            "command": 
+            {
+                "action": "openSettings",
+                "target": "defaultsFile"
+            },
+            "keys": "ctrl+alt+shift+i"
+        },
+        {
             "command": "find",
-            "keys": "ctrl+shift+f"
+            "keys": "ctrl+f"
+        },
+        {
+            "command": "duplicateTab",
+            "keys": "ctrl+d"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right"
+            },
+            "keys": "alt+v"
         },
         {
             "command": "paste",
             "keys": "ctrl+v"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "keys": "alt+shift+d"
+            "keys": "ctrl+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "nextTab"
+            }
+        },
+        {
+            "command": 
+            {
+                "action": "prevTab"
+            },
+            "keys": "ctrl+left"
+        },
+        {
+            "command": 
+            {
+                "action": "newWindow"
+            },
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "command": "scrollToTop",
+            "keys": "home"
+        },
+        {
+            "command": 
+            {
+                "action": "openSettings",
+                "target": "settingsUI"
+            },
+            "keys": "ctrl+i"
+        },
+        {
+            "command": 
+            {
+                "action": "openSettings",
+                "target": "settingsFile"
+            },
+            "keys": "ctrl+shift+i"
+        },
+        {
+            "command": "scrollDownPage",
+            "keys": "pgdn"
+        },
+        {
+            "command": "scrollToBottom",
+            "keys": "end"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollDown"
+            },
+            "keys": "ctrl+shift+down"
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": "pgup"
+        },
+        {
+            "command": "openTabRenamer",
+            "keys": "f2"
         }
     ],
+    "alwaysShowNotificationIcon": false,
     "alwaysShowTabs": false,
     "copyFormatting": "none",
-    "copyOnSelect": false,
+    "copyOnSelect": true,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "experimental.rendering.forceFullRepaint": false,
+    "experimental.rendering.software": false,
     "initialCols": 70,
     "initialRows": 15,
-    "profiles": {
-        "defaults": {
-            "acrylicOpacity": 0.69999999999999996,
-            "background": "#130730",
-            "colorScheme": "One Half Dark",
+    "minimizeToNotificationArea": true,
+    "profiles": 
+    {
+        "defaults": 
+        {
             "cursorShape": "bar",
-            "font": {
-                // "face": "Cascadia Mono PL",
+            "font": 
+            {
                 "face": "MesloLGM NF",
                 "size": 10
             },
+            "opacity": 50,
             "startingDirectory": "C:\\code\\",
             "useAcrylic": true
         },
-        "list": [
+        "list": 
+        [
             {
                 "commandline": "powershell.exe -nologo",
+                "font": 
+                {
+                    "weight": "semi-bold"
+                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
@@ -60,12 +171,13 @@
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
             "blue": "#0037DA",
-            "brightBlack": "#767676",
+            "brightBlack": "#FFFFFF",
             "brightBlue": "#3B78FF",
             "brightCyan": "#61D6D6",
             "brightGreen": "#16C60C",
@@ -269,5 +381,8 @@
             "yellow": "#808000"
         }
     ],
-    "showTabsInTitlebar": false
+    "showTabsInTitlebar": true,
+    "tabWidthMode": "titleLength",
+    "theme": "system",
+    "useAcrylicInTabRow": true
 }
