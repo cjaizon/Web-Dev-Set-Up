@@ -1,0 +1,51 @@
+1 - download autohotkey from https://www.autohotkey.com and install it
+2 - Create a new text file with a .ahk extension, in the desktop right-click > new, an option to create an auto hot key script should appear
+3 - copy the following code and paste on the file you've created
+
+#########################################################################################
+
+SwitchToWindowsTerminal(mode)
+{
+  windowHandleId := WinExist("ahk_exe WindowsTerminal.exe")
+  windowExistsAlready := windowHandleId > 0
+
+  ; If the Windows Terminal is already open, determine if we should put it in focus or minimize it.
+  if (windowExistsAlready = true)
+  {
+    activeWindowHandleId := WinExist("A")
+    windowIsAlreadyActive := activeWindowHandleId == windowHandleId
+
+    if (windowIsAlreadyActive)
+    {
+      ; Minimize the window.
+      WinMinimize, "ahk_id %windowHandleId%"
+    }
+    else
+    {
+      ; Put the window in focus.
+      WinActivate, "ahk_id %windowHandleId%"
+      WinShow, "ahk_id %windowHandleId%"
+    }
+  }
+  ; Else it's not already open, so launch it.
+  else
+  {
+      if(mode == 2) {
+        Run,  *RunAs wt
+      } else {
+        Run, wt
+      }
+  }
+}
+
+; Hotkey to use Ctrl+Shift+C to launch/restore the Windows Terminal.
+#t::SwitchToWindowsTerminal(1)
+#+t::SwitchToWindowsTerminal(2)
+
+#########################################################################################
+
+4 - save it then double click the script, it should be running already so just try it out pressing win + t, to launch it in adm mode  win + shift + t
+** it is clear you need to have windows terminal installed
+
+
+Ro launch it at startup place the ffile in the start up folder, for that open explorer and paste shell:Startup in the address bar, just move the script file there
