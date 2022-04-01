@@ -38,16 +38,21 @@ if (Test-Path($ChocolateyProfile)) {
 ### personal function
 function desktop {
   cd ~/Desktop
+  Clear-Host
 }
 function downloads {
   cd ~/Downloads
+  Clear-Host
 }
 function documents {
   cd ~/Documents
+  Clear-Host
 }
 function init {
   cd C:\code
+  Clear-Host
 }
 function home {
   cd ~/
+  Clear-Host
 }
