@@ -14,12 +14,14 @@ This will ask you to create this file if it doesn't exist.
 Paste the following commands and save the file.
 
 ### Configurações do PowerShell
+### set default location
+Set-Location C:\code
 ### Importar os temas do oh-my-posh e utilizar o Star
 Import-Module posh-git
 Import-Module oh-my-posh
 ### Themes
-Set-PoshPrompt craver
-# Set-PoshPrompt star
+# Set-PoshPrompt craver
+Set-PoshPrompt star
 ### Autocomplete, keybinds e histórico de comandos
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -28,3 +30,24 @@ Set-PSReadlineOption -HistorySearchCursorMovesToEnd
 ### Autosugestões do PSReadline
 Set-PSReadlineOption -ShowToolTips
 Set-PSReadlineOption -PredictionSource History
+### Chocolatey profile
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
+### personal function
+function desktop {
+  cd ~/Desktop
+}
+function downloads {
+  cd ~/Downloads
+}
+function documents {
+  cd ~/Documents
+}
+function init {
+  cd C:\code
+}
+function home {
+  cd ~/
+}
