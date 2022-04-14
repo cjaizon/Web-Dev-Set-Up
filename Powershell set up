@@ -1,8 +1,15 @@
+To force an instalation, usually done to install a newwer package, you need to add "-Force" at the end of the commands
+
 Install-Module oh-my-posh
 Install-Module posh-git
 Set-ExecutionPolicy Unrestricted
 Import-Module oh-my-posh
 Import-Module posh-git
+
+I've had some issues with a command in the lines below, it seems we need PSReadLine version 2.1^ and the default in windows 10 was 2.0
+for that you'll nedd to Force an instalation so that it will install the newest possible version of it
+
+Install-Module PSReadLine
 
 echo $profile
 You'll get a file path in return, that's the file, which is executed every time we start Windows Terminal
@@ -15,7 +22,7 @@ Paste the following commands and save the file.
 
 ### Configurações do PowerShell
 ### set default location
-Set-Location C:\code
+Set-Location ~/
 ### Importar os temas do oh-my-posh e utilizar o Star
 Import-Module posh-git
 Import-Module oh-my-posh
