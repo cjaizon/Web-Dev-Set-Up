@@ -1,0 +1,18 @@
+***always run the commands with the executable name, in this case I've changed "youtube-dl.exe" to "ydl.exe" so commands should start with "ydl" [command]
+
+***the file "youtube-dl.config" especify where the downloaded files should be saved, in this case, on Windows, place it on your User folder, "C:/Users/<USERNAME>", replece <USERNAME> with your own username and it will save the files in the Downloads folder inside a folder named "youtube-dl"
+
+Download video as mp4
+[link here]
+
+Download video audio as mp3
+-x --audio-format mp3 [link here]
+
+Download playlist as mp3
+-x --audio-format mp3 --playlist-start # --playlist-end # [link here]
+
+Update Youtube-dl
+-U
+
+best video format
+-f "bestvideo[width=1920]+bestaudio"
