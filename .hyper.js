@@ -138,23 +138,26 @@ module.exports = {
     //   `@company/project`
     //   `project#1.0.1`
     plugins: [
-        "hyper-one-dark",
-        "hyperpower",
-        // "hyper-tabs-enhanced",
+        "hyper-chesterish",
+        // "shades-of-purple-hyper",
+        // "hyper-material-theme",
+        // "hyper-one-dark",
+        // "hyper-aura-theme",
         // "hyper-tabs-autohide",
-        // "hyper-tansparent"
-         // "hyper-aura-theme",
+        // "hyper-tansparent",
+        "hyper-tabs-enhanced",
+        "hyperpower",
     ],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
     // to load it and avoid it being `npm install`ed
     localPlugins: [],
     keymaps: {
-    // Example
-    // 'window:devtools': 'cmd+alt+o',
-		"editor:paste": "ctrl+v",
-		"editor:search": "ctrl+f",
-		"plugins:update": "ctrl+u",
+        // Example
+        // 'window:devtools': 'cmd+alt+o',
+        "editor:paste": "ctrl+v",
+        "editor:search": "ctrl+f",
+        "plugins:update": "ctrl+u",
         "pane:close": "ctrl+w",
         "tab:new": "ctrl+t",
         "editor:movePreviousWord": "ctrl+shift+left",
